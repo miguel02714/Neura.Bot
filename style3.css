@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background-color: #1b1a1a;
+    border-radius: 40px;
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.campo {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+}
+
+.botao {
+    width: 100%;
+    padding: 12px;
+    background-color: #808080;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #696969;
+}
+
+.mudar_page {
+    color: wheat;
+    font-size: 14px;
+    margin-top: 15px;
+}

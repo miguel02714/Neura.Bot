@@ -1,0 +1,63 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+}
+.card {
+    background-color: #1b1a1a;
+    border-radius: 40px;
+    height: 450px;
+    width: 550px;
+    padding: 20px;
+    text-align: center;
+}
+.nome_login {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    color: white;
+    margin-top: 30px;
+}
+.nome_email, .nome_senha {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-align: left;
+    margin: 10px 0 5px 10px;
+}
+.email1, .password1 {
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.botao_entrar{
+    background-color: #808080; /* Cinza */
+    color: #FFFFFF; /* Branco */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Centralizar texto */
+    text-decoration: none; /* Sem sublinhado */
+    display: inline-block; /* Exibição inline-block */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease; 
+    border-radius: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.button_.botao_entrar {
+    background-color: #696969; /* Cinza mais escuro ao passar o mouse */
+}
+.mudar_page{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: wheat;
+}
