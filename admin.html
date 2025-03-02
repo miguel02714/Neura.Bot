@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Neura Bot</title>
+    <link rel="stylesheet" href="static/style_admin.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .admin-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #1b1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .titulo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background-color: #292828;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+        .status-online {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .status-offline {
+            color: #E53935;
+            font-weight: bold;
+        }
+        .botao {
+            width: 100%;
+            padding: 12px;
+            background-color: #808080;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .botao:hover {
+            background-color: #696969;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <p class="titulo">Painel de Administração - Neura Bot</p>
+        <div class="info-box">Usuários Online: <strong>145</strong></div>
+        <div class="info-box">Perguntas Ativas: <strong>78</strong></div>
+        <div class="info-box">Status da API: <span class="status-online">ONLINE</span></div>
+        <div class="info-box">Última Atualização: <strong>2 minutos atrás</strong></div>
+        <button class="botao">Atualizar Dados</button>
+        <button class="botao">Desativar API</button>
+    </div>
+</body>
+</html>

@@ -4,31 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEURA BOT</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+        .cima {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        .nome_site {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .botoes_login_criarconta {
+            margin-right: 40px;
+            display: flex;
+            gap: 10px;
+        }
+        .botoes {
+            display: flex;
+            gap: 30px;
+        }
+        .botoes label {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .entrar, .criar_conta {
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s ease-in-out;
+            font-size: 17px;
+            width: 120px;
+            height: 40px;
+        }
+        .entrar {
+            background-color: black;
+        }
+        .entrar:hover, .criar_conta:hover {
+            opacity: 0.8;
+        }
+        .criar_conta {
+            background-color: #5e5e5e;
+            width: 150px;
+            font-size: 15px;
+        }
+        .criar_conta:hover {
+            background-color: #4a4a4a;
+        }
+        .meio {
+            text-align: center;
+            margin-top: 150px;
+        }
+        .nome123 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 190px;
+            color: white;
+        }
+        .imagem_tela {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="cima">
         <div class="nome">
-          <label class="nome_site">NEURA BOT</label>
+            <label class="nome_site">NEURA BOT</label>
         </div>
         <div class="botoes">
-         <a href="http://">
-          <label class="sobre">SOBRE</label>
-         </a>
-         <a href="http://">
-            <label class="api">API</label>
-         </a>
-         <a href="http://">
-            <label class="suporte">SUPORTE</label>
-         </a>
+            <a href="#"><label class="sobre">SOBRE</label></a>
+            <a href="#"><label class="api">API</label></a>
+            <a href="#"><label class="suporte">SUPORTE</label></a>
         </div>
         <div class="botoes_login_criarconta">
-        <a href="https://miguel02714.github.io/neura_bot/login">
-            <button class="entrar">ENTRAR</button>
-        </a>
-        <a href="https://miguel02714.github.io/neura_bot/criar_conta">
-            <button class="criar_conta">CRIAR CONTA</button>
-        </a>
+              <form action="/login" method="get">
+                <button class="entrar">ENTRAR</button>
+            </form>
+            
+            <form action="/criar_conta" method="get">
+                <button class="criar_conta" type="submit">CRIAR CONTA</button>
+            </form>
         </div>
     </div>
     <div class="meio">

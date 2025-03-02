@@ -1,26 +1,210 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="static/style2.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+        :root {
+            --text-color: hsla(210, 50%, 85%, 1);
+            --shadow-color: hsla(210, 40%, 52%, .4);
+            --btn-color: hsl(210, 11%, 21%);
+            --bg-color: #141218;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+        }
+
+        .card {
+            background-color: #1b1a1a;
+            border-radius: 40px;
+            height: 450px;
+            width: 550px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .nome_login {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 45px;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        .nome_email, .nome_senha {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            text-align: left;
+            margin: 10px 0 5px 10px;
+        }
+        
+        .email1, .password1 {
+            border-radius: 10px;
+            padding: 10px;
+            width: calc(100% - 40px);
+            margin-left: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        
+        .botao_entrar {
+            position: relative;
+            padding: 10px 20px;  
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: "Source Code Pro";
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 30px;  
+            color: var(--text-color);
+            background-color: var(--btn-color);
+            box-shadow: var(--shadow-color) 2px 2px 22px;
+            border-radius: 4px; 
+            z-index: 0;  
+            overflow: hidden;
+            transition: background-color 0.3s ease; 
+        }
+
+        button:focus {
+            outline-color: transparent;
+            box-shadow: var(--btn-color) 2px 2px 22px;
+        }
+
+        /* Efeito de hover */
+        .botao_entrar:hover {
+            background-color: hsl(210, 20%, 30%);
+        }
+
+        /* Efeito de hover nas bordas e sombra */
+        .botao_entrar:hover .right::after,
+        .botao_entrar:hover .left::after {
+            transform: translate(0, -50%) rotate(7deg);
+        }
+
+        .right::after, .botao_entrar::after {
+            content: 'Hover me!';
+            display: block;
+            position: absolute;
+            white-space: nowrap;
+            padding: 40px 40px;
+            pointer-events: none;
+            opacity: 0;
+            color: white;
+            transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+
+        .botao_entrar::after {
+            font-weight: 200;
+            top: -30px;
+            left: -20px;
+        }
+
+        .right, .left {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+
+        .right {
+            left: 66%;
+        }
+
+        .left {
+            right: 66%;
+        }
+
+        .right::after {
+            top: -30px;
+            left: calc(-66% - 20px);
+            background-color: var(--bg-color);
+            color: transparent;
+            transition: transform .4s ease-out;
+            transform: translate(0, -90%) rotate(0deg);
+        }
+
+        .botao_entrar:hover .right::after {
+            opacity: 1;
+            transform: translate(0, -50%) rotate(0deg);
+        }
+
+        .botao_entrar .right:hover::after {
+            transform: translate(0, -50%) rotate(-7deg);
+        }
+
+        .botao_entrar .left:hover ~ .right::after {
+            transform: translate(0, -50%) rotate(7deg);
+        }
+
+        /* bubbles */
+        .botao_entrar::before {
+            content: '';
+            pointer-events: none;
+            opacity: .6;
+            background:
+                radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+                radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+                radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+            width: 100%;
+            height: 300%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            animation: bubbles 5s linear infinite both;
+        }
+
+        @keyframes bubbles {
+            from {
+                transform: translate();
+            }
+            to {
+                transform: translate(0, -66.666%);
+            }
+        }
+
+        .mudar_page{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+        }
+    </style>
 </head>
 <body>
     <div class="card">
         <p class="nome_login">LOGIN</p>
         <div class="email">
             <p class="nome_email">EMAIL</p>
-            <input class="email1" type="email" name="email1" id="email1" placeholder="Digite seu email">
+            <form action="/botao_entrar" method="post">
+                <input class="email1" type="email" name="email1" id="email1" placeholder="Digite seu email">
         </div>
         <div class="senha">
             <p class="nome_senha">SENHA</p>
-            
-            <input class="password1" type="password" name="senha" id="senha" placeholder="Digite sua senha">
+            <input class="password1" type="password" name="password1" id="password1" placeholder="Digite sua senha">
         </div>
-        <div class="botao_entrar">
-            <button class="botao_entrar">ENTRAR</button>
+        <div>
+            <button type="submit" class="botao_entrar">
+                <div class="left"></div>
+                ENTRAR
+                <div class="right"></div>
+            </button>
         </div>
+        </form>
         <p class="mudar_page">Não tem conta?<a href="https://miguel02714.github.io/neura_bot/criar_conta">Crie</a></p>
     </div>
 </body>
